@@ -1,10 +1,11 @@
 {
   "expo": {
-    "name": "tamagui",
-    "slug": "tamagui",
+    "name": "tamaguitest",
+    "slug": "tamaguitest",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
+    "scheme": "tamaguitest",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
@@ -24,7 +25,12 @@
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
-    }
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-build-properties"
+    ]
   }
 }
