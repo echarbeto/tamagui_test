@@ -2,7 +2,7 @@ import { useRouter } from "expo-router";
 import {
   YStack
 } from "tamagui";
-import { View, Text } from 'react-native';
+import { View, Text, TouchableWithoutFeedback } from 'react-native';
 import { FlatList, GestureHandlerRootView } from 'react-native-gesture-handler';
 import Swipeable from 'react-native-gesture-handler/Swipeable';
 
@@ -21,7 +21,7 @@ export default function Home() {
 
   const Item = ({ item }: ItemProps) => {
   return (
-    <GestureHandlerRootView>
+    <YStack>
       <Swipeable
         renderRightActions={() => (
           <View style={{ width: 100, backgroundColor: 'red', justifyContent: 'center' }}>
@@ -33,7 +33,7 @@ export default function Home() {
           <Text>{item.text}</Text>
         </View>
       </Swipeable>
-    </GestureHandlerRootView>
+    </YStack>
   );
 };
 
@@ -41,12 +41,13 @@ export default function Home() {
     <MyStack>
       <YStack
         space="$5"
+        height="100%"
       >
         <FlatList
       data={data}
       keyExtractor={item => item.id.toString()}
       renderItem={({ item }) => <Item item={item} />}
-      style={{ maxHeight: 400 }}
+      style={{ flex: 1 }}
     />
       </YStack>
     </MyStack>
